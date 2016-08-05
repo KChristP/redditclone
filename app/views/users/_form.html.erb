@@ -1,0 +1,14 @@
+
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <% if :url == "edit_url" %>
+    <input type="hidden" name="_method" value="patch">
+  <% end %>
+  <label>
+    <input type="text" name="user[username]" placeholder="Username">
+  </label>
+  <label>
+    <input type="password" name="user[password]" placeholder="Password">
+  </label>
+  <input type="Submit" value="Submit">
+
+</form>
