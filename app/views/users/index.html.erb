@@ -1,5 +1,5 @@
 Hi
 
 <% User.all.each do |user| %>
-<p><%= "#{user.username} ... Logged In" if user.session_token == session[:session_token] %></p>
+  <p><%= "#{user.username} ... Logged In" if user == current_user %></p>
 <% end %>
