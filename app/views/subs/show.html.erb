@@ -4,3 +4,10 @@ Description:
 <%= @sub.description %>
 Moderated By:
 <%= @sub.mod_id %>
+<ol>
+<% @sub.posts.each do |post| %>
+<li>
+<%= link_to post.title, post_url(post) %>
+</li>
+<% end %>
+</ol>

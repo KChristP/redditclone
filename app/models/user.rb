@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
     primary_key: :id,
     class_name: :Sub
 
+  has_many :comments,
+    primary_key: :id,
+    foreign_key: :author_id,
+    class_name: :Comment
 
   def ensure_session_token
     self.session_token ||= SecureRandom::urlsafe_base64(32)

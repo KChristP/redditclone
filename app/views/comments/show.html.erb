@@ -1,0 +1,8 @@
+
+Comment by <%= @comment.author.username %>
+<%= @comment.content %>
+<form action=" <%= new_post_comment_url  %>" method="get">
+  <input type="hidden" name="comment[:parent_id]" value= "<%=@comment.id%>" >
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <input type="Submit" value="Add a comment to this comment">
+</form>

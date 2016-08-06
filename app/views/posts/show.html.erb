@@ -1,0 +1,13 @@
+<h1> <%= @post.title %></h1>
+
+<p>
+<%= @post.content %>
+</p>
+
+<% @post.comments.each do |comment| %>
+  <%= comment.author.username %> <br>
+  <%= comment.content %>
+
+<% end %>
+
+<%= link_to "Add a new comment to this page", new_post_comment_url(@post) %>

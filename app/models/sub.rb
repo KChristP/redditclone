@@ -7,10 +7,16 @@ class Sub < ActiveRecord::Base
     foreign_key: :mod_id,
     class_name: :User
 
+  has_many :post_subs
+
   has_many :posts,
-    foreign_key: :sub_id,
-    primary_key: :id,
-    class_name: :Post
+    through: :post_subs,
+    source: :post
+
+  # has_many :posts,
+  #   foreign_key: :sub_id,
+  #   primary_key: :id,
+  #   class_name: :Post
 
 
 end
